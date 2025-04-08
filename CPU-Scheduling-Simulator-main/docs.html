@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- fontawesome for icons -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./docs.css">
+
+    <title>CPU Scheduling Simulator</title>
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html">CPU Simulator</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                    <li><a href="/Simulator/simulator.html">Simulator</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Documentation</h1>
+    </section>
+    <hr>
+
+    <!-- Question Section -->
+    <section class="container_docs">
+        <h2>CPU Scheduling</h2>
+        <p>CPU Scheduling is a process of determining which process will own CPU for execution while another process is
+            on hold. The main task of CPU scheduling is to make sure that whenever the CPU remains idle, the OS at least
+            select one of the processes available in the ready queue for execution. The selection process will be
+            carried out by the CPU scheduler. It selects one of the processes in memory that are ready for execution.
+        </p>
+    </section>
+
+    <hr>
+
+    <section class="container_docs" data-aos="zoom-in-up">
+        <h2>CPU scheduling Algorithm</h2>
+        <p>There are mainly six types of process scheduling algorithm</p>
+        <li>First Come First Serve (FCFS)</li>
+        <li>Shortest-Job-First (SJF) </li>
+        <li>Shortest Remaining Time</li>
+        <li>Priority Scheduling</li>
+        <li>Round Robin Scheduling</li>
+        <li>Multilevel Queue Scheduling</li>
+        <br>
+    </section>
+
+    <hr>
+    <!-- FCFS -->
+    <section class="container_docs" data-aos="zoom-in-up">
+        <h2>First Come First Serve</h2>
+        <p>First Come First Serve is the full form of FCFS. It is the easiest and most simple CPU scheduling algorithm.
+            In this type of algorithm, the process which requests the CPU gets the CPU allocation first. This scheduling
+            method can be managed with a FIFO queue.<br><br>
+
+            As the process enters the ready queue, its PCB (Process Control Block) is linked with the tail of the queue.
+            So, when CPU becomes free, it should be assigned to the process at the beginning of the queue.</p>
+
+        <h3>Advantages</h3>
+        <p>It is simple and easy to understand.<br></p>
+
+        <h3>Disadvantages</h3>
+        <p>
+            The process with less execution time suffer i.e. waiting time is often quite long.<br><br>
+            Favors CPU Bound process then I/O bound process.<br><br>
+            FCFS is problematic for time-sharing systems because it doesn’t ensure regular CPU access for all users.</p>
+        <button class="btn_1" onclick="gotoFCFS();">Go to FCFS</button>
+        <br>
+    </section>
+    <hr>
+    <!-- SRTF -->
+    <section class="container_docs" data-aos="zoom-in-up">
+        <h2>Shortest Remaining Time</h2>
+        <p>The full form of SRT is Shortest remaining time. It is also known as SJF preemptive scheduling. In this
+            method, the process will be allocated to the task, which is closest to its completion. This method prevents
+            a newer ready state process from holding the completion of an older process.<br></p>
+
+        <h3>Advantages</h3>
+        <p>SRTF algorithm makes the processing of the jobs faster than the SJF
+            algorithm, mentioned it’s overhead charges are not counted.</p>
+
+        <h3>Disadvantages</h3>
+        <p>
+            In SRTF, the context switching is done a lot more times than in SJF due to more consumption of the CPU's
+            valuable time for processing. The consumed time of CPU then adds up to its processing time and which then
+            diminishes the advantage of fast processing of this algorithm.<br></p>
+        <button class="btn_1" onclick="gotoSRTF();">Go to SRTF</button>
+        <br>
+    </section>
+    <hr>
+
+    <!-- Priority -->
+    <section class="container_docs" data-aos="zoom-in-up">
+        <h2>Priority Based Scheduling</h2>
+        <p>Priority scheduling is a method of scheduling processes based on priority. In this method, the scheduler
+            selects the tasks to work as per the priority.<br><br>
+            Priority scheduling also helps OS to involve priority assignments. The processes with higher priority should
+            be carried out first, whereas jobs with equal priorities are carried out on a round-robin or FCFS basis.
+            Priority can be decided based on memory requirements, time requirements, etc.<br><br>
+        </p>
+        <h3>Advantages</h3>
+        <p>This provides a good mechanism where the relative importance of each process maybe precisely defined.<br>
+        </p>
+        <h3>Disadvantages</h3>
+        <p>If high priority processes use up a lot of CPU time, lower priority processes may starve and be postponed
+            indefinitely.The situation where a process never gets scheduled to run is called starvation<br><br>
+            Another problem is deciding which process gets which priority level assigned to it..<br></p>
+        <button class="btn_1" onclick="gotoPriority();">Go to Priority</button>
+        <br>
+    </section>
+    <hr>
+    <!-- Round Robin -->
+    <section class="container_docs" data-aos="zoom-in-up">
+        <h2>Round-Robin Scheduling</h2>
+        <p>Round robin is the oldest, simplest scheduling algorithm. The name of this algorithm comes from the
+            round-robin principle, where each person gets an equal share of something in turn. It is mostly used for
+            scheduling algorithms in multitasking. This algorithm method helps for starvation free execution of
+            processes.<br><br></p>
+
+        <h3>Advantages</h3>
+        <p>Every process gets an equal share of the CPU.<br><br>
+            RR is cyclic in nature, so there is no starvation.</p>
+
+        <h3>Disadvantages</h3>
+        <p>Setting the quantum too short, increases the overhead and lowers the CPU efficiency, but setting it too
+            long may cause poor response to short processes.<br><br>
+            Average waiting time under the RR policy is often long.<br>
+        </p>
+        <button class="btn_1" onclick="gotoWorking();">Go to RR</button>
+        <br>
+    </section>
+    <hr>
+    <!-- SJF -->
+    <section class="container_docs" data-aos="zoom-in-up">
+        <h2>Shortest Job First</h2>
+        <p>SJF is a full form of (Shortest job first) is a scheduling algorithm in which the process with the shortest
+            execution time should be selected for execution next. This scheduling method can be preemptive or
+            non-preemptive. It significantly reduces the average waiting time for other processes awaiting
+            execution.<br></p>
+
+        <h3>Advantages</h3>
+        <p>Shortest jobs are favored.<br><br>
+            It is provably optimal, in that it gives the minimum average waiting time for a given set of processes.
+        </p>
+
+        <h3>Disadvantages</h3>
+        <p>SJF may cause starvation, if shorter processes keep coming. This problem is solved by aging..<br><br>
+           It cannot be implemented at the level of short term CPU scheduling.<br></p>
+
+        <button class="btn_1" onclick="gotoSJF();">Go to SJF</button>
+        <br>
+    </section>
+
+    <!--Footer Section  -->
+    <section class="footer">
+        <h2>
+            <i class="fa fa-copyright"></i> Copyright 2025 Bhargavi Goyal. All rights reserved.
+        </h2>
+    </section>
+
+
+    <!--JavaScript  -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        function gotoSimulator() {
+            location.href = ("/Simulator/simulator.html");
+        }
+
+        function gotoFCFS() {
+            location.href = ("./Algorithm/Algo.html");
+        }
+
+        function gotoSRTF() {
+            location.href = ("./Algorithm/Algo.html");
+        }
+
+        function gotoPriority() {
+            location.href = ("./Algorithm/Algo.html");
+            
+        }
+
+        function gotoSJF() {
+            location.href = ("./Algorithm/Algo.html");
+        }
+
+        function gotoWorking() {
+            location.href = ("./Algorithm/Algo.html");
+        }
+
+    </script>
+
+
+    <!-- For the animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 200, // offset (in px) from the original trigger point
+            duration: 800
+        });
+    </script>
+</body>
+
+</html>

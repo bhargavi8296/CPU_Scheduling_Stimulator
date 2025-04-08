@@ -1,0 +1,50 @@
+.container_docs{
+    border: 1px solid black;
+    height: auto;
+    padding-top:50px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 60%;
+    margin: 10rem auto;
+    text-align: center;
+}
+hr{
+    width: 70%;
+    margin: auto;
+    border: none;
+    border-top: 1px dotted grey ;
+
+}
+.container_docs h2{
+    font-size: 36px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.container_docs p{
+    margin: 2rem;
+    font-size: medium;
+    padding-bottom: 50px;
+    line-height : 30px;
+}
+
+.container_docs li{
+    text-align: left;
+    line-height: normal;
+    padding-left: 40%;
+    list-style:none;
+}
+
+.special li{
+    line-height: 25px;
+}
+
+.container_docs blod{
+    font-weight: 500;
+}
+
+.container_docs:hover{
+    box-shadow: 0 0 20px 0px rgba(13, 14, 13, 0.644);
+    transition: 0.5s;
+}
