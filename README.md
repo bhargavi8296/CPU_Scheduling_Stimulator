@@ -33,10 +33,16 @@ The simulator covers the following common CPU scheduling algorithms:
 ![CPUSchedulingSimulatorand1morepage-Personal-MicrosoftEdge2025-04-0910-36-16-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/50f3f317-076c-471c-931a-7701cd41da3f)
 
 
+
+
 ![CPUSchedulingSimulatorand1morepage-Personal-MicrosoftEdge2025-04-0910-36-16-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/5e712ce3-ee9d-43dc-b26f-9ddea2db428c)
 
 
+
+
 ![CPUSchedulingSimulatorand1morepage-Personal-MicrosoftEdge2025-04-0910-36-16-ezgif com-video-to-gif-converter (2)](https://github.com/user-attachments/assets/2f236c9b-e82e-455c-b58c-cb08d22fa04d)
+
+
 
 
 ![CPUSchedulingSimulatorand1morepage-Personal-MicrosoftEdge2025-04-0910-36-16-ezgif com-video-to-gif-converter (3)](https://github.com/user-attachments/assets/a695df4b-21f9-4381-ad01-d5722dc726bf)
